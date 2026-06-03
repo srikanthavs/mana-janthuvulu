@@ -747,11 +747,8 @@
     g.classList.remove("idle","perk");
     // re-trigger react
     g.classList.remove("react"); void g.offsetWidth; g.classList.add("react");
-    // sound at +100ms
-    seqTimers.push(setTimeout(()=>{ if(SOUNDS[a.sound]) SOUNDS[a.sound](); }, 100));
-    // word bubble + narration after animation (~1.6s)
-    showWord(a.te, g);
-    seqTimers.push(setTimeout(()=>{ speak(a.say); }, 1600));
+    // word bubble + Telugu name after 1.5s, no other sound
+    seqTimers.push(setTimeout(()=>{ showWord(a.te, g); speak(a.say); }, 1500));
     seqTimers.push(setTimeout(()=>{ g.classList.remove("react"); }, 1500));
   }
 
